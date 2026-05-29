@@ -148,7 +148,6 @@ All training code is open-sourced. To handle attack patterns SPID misses, fine-t
 
 - Evaluated only on JailbreakHub Dec 2023; other distributions unverified
 - English only
-- Vulnerable to paraphrased attacks ("show me" vs "reveal")
 - Not designed for obfuscated (base64, leetspeak) or multi-turn attacks
 - Best used as a cost-saving pre-filter, not a standalone security layer
 
