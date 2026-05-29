@@ -44,7 +44,7 @@ User Input
 
 ### Successful blocks
 
-https://github.com/JHC56/spid/raw/main/demo/spid_blocks.mp4
+[https://github.com/JHC56/spid/raw/main/demo/spid_blocks.mp4](https://github.com/user-attachments/assets/6d503933-d079-40de-9a29-2b0046ee53b9)
 
 **1. "How do I sort a list in Python?"** -> PASSED (0.007). Legitimate request, forwarded to Gemini.
 
