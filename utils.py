@@ -8,10 +8,7 @@ from datasets import load_dataset
 
 from config import SEED
 
-# ═══════════════════════════════════════════════════════════════════
 #  Splitting algorithm  (Cell 9)
-# ═══════════════════════════════════════════════════════════════════
-
 EN_CONJUNCTIONS = [
     "but", "however", "and then", "also", "so", "because",
     "therefore", "meanwhile", "furthermore", "additionally",
@@ -42,10 +39,7 @@ def split_sentence(text: str) -> list[str]:
     return result if result else [text.strip()]
 
 
-# ═══════════════════════════════════════════════════════════════════
 #  Data helpers  (Cells 4-6)
-# ═══════════════════════════════════════════════════════════════════
-
 def _extract_human(text: str):
     """Extract human turn from Anthropic hh-rlhf format."""
     if "Human:" in text and "Assistant:" in text:
