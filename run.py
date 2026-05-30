@@ -20,23 +20,23 @@ def main(skip_train: bool = False):
         model, tokenizer, trainer, train_list, test_list, \
             ood_data, ood_labels, ood_tok, test_tok = train()
 
-        # ── Step 2: Calibrate ──
+        #  Step 2: Calibrate
         from evaluate import calibrate_temperature, indist_sweep, evaluate_ood
         temperature, test_probs_cal = calibrate_temperature(
             trainer, test_tok, test_list
         )
         indist_sweep(test_probs_cal, test_list)
 
-        # ── Step 3: OOD Evaluation ──
+        #  Step 3: OOD Evaluation 
         threshold, temperature, ood_probs_cal, spid_preds_final = evaluate_ood(
             trainer, ood_tok, ood_data, ood_labels, temperature
         )
 
-        # ── Step 4: Build pipeline ──
+        # Step 4: Build pipeline 
         from pipeline import SPIDPipeline, evaluate_pipeline_ood
         pipe = SPIDPipeline(model, tokenizer, temperature, threshold)
 
-        # ── Step 5: Pipeline OOD eval ──
+        #  Step 5: Pipeline OOD eval 
         evaluate_pipeline_ood(pipe, ood_data, ood_labels, spid_preds_final)
 
     else:
@@ -44,7 +44,7 @@ def main(skip_train: bool = False):
         from pipeline import SPIDPipeline
         pipe = SPIDPipeline.from_pretrained("./spid-deberta-base")
 
-    # ── Step 6: Demo ──
+    #  Step 6: Demo 
     from demo import run_demo, splitting_comparison
     run_demo(pipe)
     splitting_comparison(pipe)
