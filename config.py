@@ -4,14 +4,14 @@ import random
 import numpy as np
 import torch
 
-# ── reproducibility ──
+# reproducibility 
 SEED = 42
 
-# ── model ──
+# model 
 MODEL_NAME = "microsoft/deberta-v3-base"
 MAX_LEN = 256
 
-# ── training ──
+# training 
 CLASS_WEIGHTS_LIST = [2.0, 1.0]   # [safe, unsafe] — penalise FP more
 LABEL_SMOOTHING = 0.1
 
@@ -31,11 +31,11 @@ R2_WARMUP = 0.05
 
 WEIGHT_DECAY = 0.01
 
-# ── evaluation ──
+# evaluation 
 TARGET_PRECISION = 0.90
 MIN_RECALL = 0.65
 
-# ── seed everything ──
+# seed everything 
 def seed_everything(seed: int = SEED):
     random.seed(seed)
     np.random.seed(seed)
